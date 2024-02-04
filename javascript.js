@@ -12,3 +12,20 @@ function getComputerChoice(){
     }
     return choice;
 }
+function playRound(playerSelection, computerSelection){
+    let message = "";
+    if(playerSelection.toUpperCase()=="ROCK" && computerSelection=="Rock"){
+        message="Both of you chose rock, play again";
+    }
+    else if(playerSelection.toUpperCase()=="ROCK" && computerSelection=="Scissors"){
+        message="You Won! Nice job."
+    }
+    else{
+        message="You lost :( try again."
+    }
+    return message;
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
