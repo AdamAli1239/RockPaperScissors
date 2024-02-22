@@ -61,11 +61,11 @@ function playRound(playerSelection, computerSelection){
 
     return message;
 }
-function playGame(){
+function playGame(userChoice){
     
-    let userInput = prompt("Please enter your choice (Rock,Paper,Scissors): ");
+   // let userInput = prompt("Please enter your choice (Rock,Paper,Scissors): ");
     let computerChoice=getComputerChoice();
-    let result=playRound(userInput, computerChoice);
+    let result=playRound(userChoice, computerChoice);
 
     return result;
 }
@@ -76,7 +76,14 @@ const scissors = document.createElement('button');
 const divide = document.createElement('div');
 
 //how do I change all my consoles.log into dom methods
+const score = document.createElement('span');
+rock.addEventListener('click',()=>{
+    playGame("rock");
+});
+paper.addEventListener('click',()=>{
+    playGame("paper");
+});
 
-rock.onclick=playRound;
-paper.onclick=playRound;
-scissors.onclick=playRound;
+scissors.addEventListener('click',()=>{
+playGame("scissors");
+});
