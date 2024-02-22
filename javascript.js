@@ -61,26 +61,10 @@ function playRound(playerSelection, computerSelection){
 
     return message;
 }
-function playGame(){
-    
-    let userInput = prompt("Please enter your choice (Rock,Paper,Scissors): ");
-    let computerChoice=getComputerChoice();
-    let result=playRound(userInput, computerChoice);
-    if(totalRounds==5){
-        if(points>2){
-            alert("You won!!! Congrats!");
-        }
-        else if(points <2){
-            alert("you lost, don't worry you'll get em next time.");
-        }
-        else if(points==2){
-            alert("Tie game. Wanna play again?");
-        }
-    }
-    return result;
-}
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
+const rock = document.createElement('button');
+const paper = document.createElement('button');
+const scissors = document.createElement('button');
+
+rock.onclick=playRound;
+paper.onclick=playRound;
+scissors.onclick=playRound;
