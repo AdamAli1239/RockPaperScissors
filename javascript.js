@@ -61,9 +61,21 @@ function playRound(playerSelection, computerSelection){
 
     return message;
 }
+function playGame(){
+    
+    let userInput = prompt("Please enter your choice (Rock,Paper,Scissors): ");
+    let computerChoice=getComputerChoice();
+    let result=playRound(userInput, computerChoice);
+
+    return result;
+}
 const rock = document.createElement('button');
 const paper = document.createElement('button');
 const scissors = document.createElement('button');
+
+const divide = document.createElement('div');
+
+//how do I change all my consoles.log into dom methods
 
 rock.onclick=playRound;
 paper.onclick=playRound;
