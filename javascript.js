@@ -17,7 +17,7 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     let message = "";
     let num = 0;
-    if(playerSelection.toUpperCase()=="ROCK" && computerSelection=="Rock"){
+    if(playerSelection.toUpperCase() =="ROCK" && computerSelection=="Rock"){
         message="Both of you chose Rock, play again";
         totalRounds=totalRounds+1;
     }
@@ -69,11 +69,18 @@ function playGame(userChoice){
 
     return result;
 }
+
+const container = document.querySelector('div');
 const rock = document.createElement('button');
 const paper = document.createElement('button');
-const scissors = document.createElement('button');
+const scissors = document.createElement('button')
+rock.innerText='Rock';
+document.body.appendChild(rock);
 
-const divide = document.createElement('div');
+paper.innerText='Paper';
+document.body.appendChild(paper);
+scissors.innerText='scissors';
+document.body.appendChild(scissors);
 
 //how do I change all my consoles.log into dom methods
 const score = document.createElement('span');
@@ -85,5 +92,6 @@ paper.addEventListener('click',()=>{
 });
 
 scissors.addEventListener('click',()=>{
-playGame("scissors");
+    playGame("scissors")
 });
+
