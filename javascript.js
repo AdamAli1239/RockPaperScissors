@@ -83,24 +83,47 @@ scissors.innerText='scissors';
 document.body.appendChild(scissors);
 
 const divvy = document.createElement('div');
-let outcome = document.createElement('span');
+document.body.appendChild(divvy)
+
+const orderList = document.createElement('ol')
 
 //how do I change all my consoles.log into dom methods
 const score = document.createElement('span');
+divvy.appendChild(orderList)
 rock.addEventListener('click',()=>{
+    const outcome = document.createElement('span');
     outcome.textContent=playGame("rock");
-    divvy.appendChild(outcome);
+    const item = document.createElement('li')
+   // divvy.appendChild(outcome);
+   // document.body.appendChild(divvy)
+   item.appendChild(outcome)
+   orderList.appendChild(item)
+   
  
 });
 paper.addEventListener('click',()=>{
+    const outcome = document.createElement('span');
     outcome.textContent= playGame("paper");
-    divvy.appendChild(outcome);
+    const item = document.createElement('li')
+    //divvy.appendChild(outcome);
+    //document.body.appendChild(divvy)
+    item.appendChild(outcome)
+    orderList.appendChild(item)
+    
 });
 
 scissors.addEventListener('click',()=>{
+    const outcome = document.createElement('span');
     outcome.textContent = playGame("scissors")
-    divvy.appendChild(outcome);
+    const item = document.createElement('li')
+   // divvy.appendChild(outcome);
+    //document.body.appendChild(divvy)
+    item.appendChild(outcome)
+    orderList.appendChild(item)
+
+    
 });
 
 
-document.body.appendChild(divvy)
+
+
