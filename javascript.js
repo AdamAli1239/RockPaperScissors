@@ -82,16 +82,25 @@ document.body.appendChild(paper);
 scissors.innerText='scissors';
 document.body.appendChild(scissors);
 
+const divvy = document.createElement('div');
+let outcome = document.createElement('span');
+
 //how do I change all my consoles.log into dom methods
 const score = document.createElement('span');
 rock.addEventListener('click',()=>{
-    playGame("rock");
+    outcome.textContent=playGame("rock");
+    divvy.appendChild(outcome);
+ 
 });
 paper.addEventListener('click',()=>{
-    playGame("paper");
+    outcome.textContent= playGame("paper");
+    divvy.appendChild(outcome);
 });
 
 scissors.addEventListener('click',()=>{
-    playGame("scissors")
+    outcome.textContent = playGame("scissors")
+    divvy.appendChild(outcome);
 });
 
+
+document.body.appendChild(divvy)
