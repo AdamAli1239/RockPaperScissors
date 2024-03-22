@@ -80,7 +80,7 @@ else if(computerPoints==5){
     return result;
 }
 
-const container = document.querySelector('div');
+
 const rock = document.createElement('button');
 const paper = document.createElement('button');
 const scissors = document.createElement('button')
@@ -98,51 +98,70 @@ document.body.appendChild(divvy)
 const orderList = document.createElement('ol')
 
 
-const score = document.createElement('span');
+
+
 divvy.appendChild(orderList)
+
+const divForScore=document.createElement('div');
+document.body.appendChild(divForScore)
+let playerScore=document.createElement('span');
+let computerScore=document.createElement('span');
+playerScore.textContent="0 ";
+computerScore.textContent="0 ";
+
+divForScore.appendChild(playerScore)
+divForScore.appendChild(computerScore)
+
 rock.addEventListener('click',()=>{
     const outcome = document.createElement('span');
     outcome.textContent=playGame("rock");
     const item = document.createElement('li')
-  
    item.appendChild(outcome)
    orderList.appendChild(item)
-   
- 
+   if(outcome.textContent=="You Won! Nice job."){
+    playerScore.textContent=parseInt(playerScore.textContent)+1;
+    divForScore.appendChild(playerScore)
+   }
+   else if(outcome.textContent=="You lost :( try again."){
+    computerScore.textContent=parseInt(computerScore.textContent)+1;
+    divForScore.appendChild(computerScore)
+   }
+
+
+  
+
 });
 paper.addEventListener('click',()=>{
     const outcome = document.createElement('span');
     outcome.textContent= playGame("paper");
     const item = document.createElement('li')
-  
     item.appendChild(outcome)
     orderList.appendChild(item)
-    
+    if(outcome.textContent=="You Won! Nice job."){
+        playerScore.textContent=parseInt(playerScore.textContent)+1;
+        divForScore.appendChild(playerScore)
+       }
+       else if(outcome.textContent=="You lost :( try again."){
+        computerScore.textContent=parseInt(computerScore.textContent)+1;
+        divForScore.appendChild(computerScore)
+       }
+
 });
 
 scissors.addEventListener('click',()=>{
     const outcome = document.createElement('span');
     outcome.textContent = playGame("scissors")
     const item = document.createElement('li')
- 
     item.appendChild(outcome)
-    orderList.appendChild(item)
+    orderList.appendChild(item) 
+    if(outcome.textContent=="You Won! Nice job."){
+        playerScore.textContent=parseInt(playerScore.textContent)+1;
+        divForScore.appendChild(playerScore)
+       }
+       else if(outcome.textContent=="You lost :( try again."){
+        computerScore.textContent=parseInt(computerScore.textContent)+1 ;
+        divForScore.appendChild(computerScore)
+       }
 
-    
+
 });
-
-//To display a running score and announce a winnter when someone wins
-
-//if(points==5){
-  //  alert("CONGRATS YOU WIN!!!!!");
-//}
-//else if(computerPoints==5){
-//    alert("You lost :( play again?");
-//}
-// maybe put this stuff in the event listeners?
-const divForScore=document.createElement('div');
-let playerScore=document.createElement('span');
-let computerScore=document.createElement('span');
-
-
-// let rounds = document.createElement('');
